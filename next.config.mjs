@@ -7,5 +7,6 @@ const prefix =
 const nextConfig = {
 	output: "export",
 	assetPrefix: prefix,
+	images: { unoptimized: true },
 }
 export default nextConfig
