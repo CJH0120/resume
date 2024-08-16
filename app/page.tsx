@@ -1,6 +1,6 @@
 import IntroSection from "@/components/intro"
 import styles from "./page.module.scss"
-import image from "@/public/tesing.jpg"
+import image from "@/public/profile.webp"
 import Introduce from "@/components/introduce"
 import Skill from "@/components/skill"
 import Experience from "@/components/experience"

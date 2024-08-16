@@ -1,14 +1,44 @@
 import type { Metadata } from "next"
 import { Noto_Sans_KR } from "next/font/google"
 import "./globals.scss"
-import Link from "next/link"
 import Footer from "@/components/footer"
-
+import ogImage from "@/public/og/og.png"
 const NSK = Noto_Sans_KR({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: "최종현 | 프론트엔드 개발자 이력서",
 	description: "안녕하세요, 프론트엔드 개발자 최종현입니다",
+	metadataBase: new URL("https://cjh0120.github.io/resume"),
+	keywords: [
+		"프론트엔드 개발자 이력서",
+		"프론트엔드",
+		"개발자",
+		"최종현 이력서",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
+	authors: [{ name: "cjh0120", url: "https://cjh0120.github.io/resume" }],
+	verification: {
+		google: "xpesEEYKOKSfiNiQUY_b3BKO6-r9dGg7Ag7LgMqgls4",
+	},
+	openGraph: {
+		type: "profile",
+		images: [
+			{
+				url: ogImage.src,
+				alt: "OG IMAGE",
+			},
+		],
+	},
 }
 
 export default function RootLayout({
@@ -18,10 +48,6 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<meta
-				name="google-site-verification"
-				content="xpesEEYKOKSfiNiQUY_b3BKO6-r9dGg7Ag7LgMqgls4"
-			/>
 			<body className={NSK.className}>
 				{children}
 				<Footer />
