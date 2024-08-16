@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Noto_Sans_KR } from "next/font/google"
 import "./globals.scss"
+import Link from "next/link"
+import Footer from "@/components/footer"
 
 const NSK = Noto_Sans_KR({ subsets: ["latin"] })
 
@@ -20,7 +22,10 @@ export default function RootLayout({
 				name="google-site-verification"
 				content="xpesEEYKOKSfiNiQUY_b3BKO6-r9dGg7Ag7LgMqgls4"
 			/>
-			<body className={NSK.className}>{children}</body>
+			<body className={NSK.className}>
+				{children}
+				<Footer />
+			</body>
 		</html>
 	)
 }

@@ -9,6 +9,7 @@ export interface DateCardProps {
 	subTitle?: string
 	list?: string[]
 	isCurrent?: boolean
+	stackList?: string[]
 }
 
 const DateCard = ({
@@ -18,6 +19,7 @@ const DateCard = ({
 	subTitle,
 	title,
 	list,
+	stackList,
 	children,
 	isCurrent = false,
 }: PropsWithChildren<DateCardProps>) => {
@@ -37,11 +39,12 @@ const DateCard = ({
 						{endDate && <span>{getYYYYMM(endDate!)}</span>}
 					</div>
 					<div className={styles["date-period-wrap"]}>
-						<div className={styles["date-period"]}>
-							{isPeriod &&
-								periodDate(startDate, endDate ?? new Date().toISOString())}
-							개월
-						</div>
+						{isPeriod && (
+							<div className={styles["date-period"]}>
+								{periodDate(startDate, endDate ?? new Date().toISOString())}{" "}
+								개월
+							</div>
+						)}
 						{isCurrent && <div className={styles["date-period"]}>재직중</div>}
 					</div>
 				</div>
@@ -50,6 +53,18 @@ const DateCard = ({
 				<div className={styles["date-card-title"]}>{title}</div>
 				{subTitle && (
 					<div className={styles["date-card-subtitle"]}>{subTitle}</div>
+				)}
+				{stackList?.length && (
+					<div className={styles["date-card-stack-wrap"]}>
+						<p>Stack List</p>
+						<div className={styles["date-card-stacks"]}>
+							{stackList?.map((item) => (
+								<div className={styles["date-card-stack"]} key={item}>
+									{item}
+								</div>
+							))}
+						</div>
+					</div>
 				)}
 				{list?.length && (
 					<ol className={styles["date-card-list"]}>

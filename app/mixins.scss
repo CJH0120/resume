@@ -1,9 +1,5 @@
 @mixin mediaQuery($breakpoint) {
 	@if $breakpoint == "mobile" {
-		@media (max-width: 600px) {
-			@content;
-		}
-	} @else if $breakpoint == "tablet" {
 		@media (max-width: 768px) {
 			@content;
 		}
@@ -16,7 +12,6 @@
 
 @mixin commCSS() {
 	padding: 15px 0;
-	border-bottom: 1px solid #ccc;
 	display: flex;
 	gap: 1.5rem;
 }
