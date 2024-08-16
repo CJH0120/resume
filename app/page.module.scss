@@ -1,4 +1,15 @@
-.description {
-	color: red;
-	font-size: 200px;
+@import "./mixins.scss";
+
+.main {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
+
+	@include mediaQuery("mobile") {
+		padding: 15px;
+	}
 }

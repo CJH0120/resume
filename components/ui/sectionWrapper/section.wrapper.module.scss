@@ -1,0 +1,11 @@
+@import "../../../app/mixins.scss";
+.section-wrapper {
+	@include commCSS();
+	flex-direction: column;
+	gap: 1rem;
+	.section-title {
+		color: #ff6f61;
+		text-transform: capitalize;
+		font-size: 1.8rem;
+	}
+}

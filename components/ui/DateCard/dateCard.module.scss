@@ -1,0 +1,74 @@
+@import "../../../app/mixins.scss";
+.date-card {
+	display: flex;
+	gap: 2rem;
+	padding: 15px 0;
+	@include mediaQuery("mobile") {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 10px 0;
+	}
+	.date-card-date {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		width: 200px;
+		flex: 0 0 auto;
+		.date-wrap {
+			display: flex;
+			flex-direction: column;
+			flex: 0 0 auto;
+			align-items: flex-end;
+			gap: 0.5rem;
+
+			.date {
+				display: flex;
+				gap: 0.5rem;
+				font-size: 1.2rem;
+			}
+			.date-period-wrap {
+				display: flex;
+				gap: 0.5rem;
+				.date-period {
+					padding: 5px;
+					border-radius: 4px;
+					background: #ff6f61;
+					color: #fff;
+					font-size: 0.8rem;
+				}
+			}
+		}
+		@include mediaQuery("mobile") {
+			flex-direction: row;
+			width: 100%;
+			.date-wrap {
+				flex-direction: row;
+			}
+		}
+	}
+	.date-card-content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 0.5rem;
+		.date-card-title {
+			font-size: 1.2rem;
+		}
+		.date-card-subtitle {
+			font-size: 1rem;
+			color: #5f5f5f;
+		}
+		.date-card-list {
+			display: flex;
+			flex-direction: column;
+			.date-card-item {
+				list-style: none;
+				margin-left: 20px;
+				&::before {
+					content: "-";
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}

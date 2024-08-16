@@ -1,0 +1,10 @@
+@import "../../app/mixins.scss";
+
+.introduce_wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	.introduce_p {
+		font-size: 1rem;
+	}
+}
