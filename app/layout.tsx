@@ -3,6 +3,8 @@ import { Noto_Sans_KR } from "next/font/google"
 import "./globals.scss"
 import Footer from "@/components/footer"
 import ogImage from "@/public/og/og.png"
+import { GoogleAnalytics } from "@next/third-parties/google"
+
 const NSK = Noto_Sans_KR({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -21,9 +23,6 @@ export const metadata: Metadata = {
 		googleBot: {
 			index: true,
 			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
 		},
 	},
 	authors: [{ name: "cjh0120", url: "https://cjh0120.github.io/resume" }],
@@ -52,6 +51,7 @@ export default function RootLayout({
 				{children}
 				<Footer />
 			</body>
+			<GoogleAnalytics gaId="GTM-PLG59NC4" />
 		</html>
 	)
 }
